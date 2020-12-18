@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>note app</title>
+    <!--  wrote in vs_code  -->
+<style>
+    
+</style>
+</head>
+
+
+<body>
+    <!-- html -->
+    <nav>note keeper</nav><br><br>
+    <label for="input">Your Note :</label>
+    <input type="text" name="input" id="input">
+    <input type="submit" value="Add" onclick="add()" id="btn_add">
+    <input type="submit" value="Change text color" onclick="change_color()" id="btn_add">    
+    <div class="all" id="all">
+        <ol>
+            
+            <ol id="ol"></ol>
+
+        </ol>
+    </div>
+    
+    <!-- javascript -->
+    <script>
+        
+        
+        var ol = document.getElementById("ol");
+        var colors= ["#de5f4b", "red","#2f3322","#121524", "#16a875", "#1d9c11", "#a6a119", "#0528b3"]
+        var n=0;
+        var lis=[]
+
+
+
+        function add() {
+            var input = document.getElementById("input").value;
+            var li = document.createElement("li");
+            var txt = document.createTextNode(input);            
+
+            li.appendChild(txt);
+            ol.appendChild(li);
+        }
+
+
+        function change_color(){
+            ol.style.color = colors[n]
+            n++
+            if (n ==colors.length) {
+                n=0;
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
